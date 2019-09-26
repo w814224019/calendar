@@ -1,0 +1,65 @@
+<view style="width: 90%;height:580rpx;overflow:hidden;margin: 0 auto 40rpx;">
+  <calendar
+    calendarConfig="{{calendarConfig}}"
+    bind:onSwipe="onSwipe"
+    bind:onTapDay="onTapDay"
+    bind:afterTapDay="afterTapDay"
+    bind:whenChangeWeek="whenChangeWeek"
+    bind:whenChangeMonth="whenChangeMonth"
+    bind:afterCalendarRender="afterCalendarRender"
+  ></calendar>
+</view>
+
+<view class='b cc wrap btn-wrap'>
+ <!-- <button  class="b cc btn btn-cyan" bindtap="setItemAction" data-disable="undefined"role="button"aria-disabled="false">
+设置待办事项
+
+</button> -->
+    <button
+      class='b cc btn btn-{{item.color}}'
+      wx:for="{{actionBtn}}"
+      wx:key="action"
+      data-action="{{item.action}}"
+      data-disable="{{item.disable}}"
+      bindtap="handleAction">{{item.text}}</button>
+      <picker mode="date" value="{{date}}" bindchange="getjumptimeAction">
+        
+  <button class="b cc btn  btn-olive" data-disable="undefined"role="button"aria-disabled="false">
+跳转指定日期
+</button>
+      </picker>
+ 
+
+
+
+
+
+
+</view>
+
+      
+<view class="show-rst-wrap">
+<view class="show-rst">{{rst}}</view>
+  <!-- <view wx:if="{{rst}}" wx:for="{{rst}}" wx:key="*this" class="show-rst">{{item}}</view>
+  <view wx:if="{{rstStr}}" wx:key="*this" class="show-rst">{{rstStr}}</view> -->
+</view>
+
+<view hidden='{{isSearchTermHidden}}' style='position:fixed; left:0; top:0; height:{{systemInfo.windowHeight}}px ;  width: {{systemInfo.windowWidth}}px;  background-color: #F6F6F6;   border: 1rpx solid lavender;background: rgba(0,0,0,0.3);'>
+  <view class='center_view'>
+    <view class='top_title'>设置代办事项</view>
+    <view class='searchTerm'>
+      <view class='searchTerm_title'>选择时间:</view>
+      <picker mode="date" value="{{date}}" start="{{begintime}}" bindchange="getStartTimeAction">
+        <view class='searchTime'>{{begintime}}</view>
+      </picker>
+    </view>
+    <view class='searchTerm'>
+      <view class='searchTerm_title'>代办内容:</view>
+      <input class='searchTerm_info' bindinput='gettextAction'></input>
+    </view>
+    <view class='button_View'>
+      <button class='bottom_btn' bindtap="cancelAction">取消</button>
+      <button class='bottom_btn' bindtap="sureAction">确定</button>
+    </view>
+  </view>
+</view>

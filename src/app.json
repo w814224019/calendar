@@ -1,0 +1,18 @@
+{
+  "pages": [
+    "pages/calendarComponent/index",
+    "pages/index/index",
+    "pages/calendar/index",
+    "pages/calendarTemplate/index",
+    
+    "pages/calendarMoreComponent/index",
+    "pages/datepickerTemplate/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "一千家日历",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "一千家日历",
+  "usingComponents": {
+    "calendar": "../../component/calendar/index"
+  }
+}
